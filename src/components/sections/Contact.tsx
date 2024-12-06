@@ -1,5 +1,6 @@
 import Accordion from '@/components/shared/Accordion'
 import Section from '@/components/shared/Section'
+import useCopyToClipboard from '@/hooks/useCopyToClipboard'
 import { cb } from '@/lib/cx'
 import { Person, Wedding } from '@/models/wedding'
 import styles from './Contact.module.scss'
@@ -47,14 +48,7 @@ export default function Contact({ groom, bride }: Props) {
 }
 
 function ContextInfo({ name, account, phoneNumber }: Person) {
-  const handleCopy = async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text)
-      alert('클립보드에 복사되었습니다.')
-    } catch (e) {
-      alert('복사에 실패하였습니다')
-    }
-  }
+  const handleCopy = useCopyToClipboard()
   return (
     <div className={cx('wrap-contact')}>
       <div className={cx('wrap-contact-info')}>

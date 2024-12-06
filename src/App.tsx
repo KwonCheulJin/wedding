@@ -5,6 +5,7 @@ import ImageGallery from '@/components/sections/ImageGallery'
 import Intro from '@/components/sections/Intro'
 import Invitation from '@/components/sections/Invitation'
 import Map from '@/components/sections/Map'
+import Share from '@/components/sections/Share'
 import Video from '@/components/sections/Video'
 import FullScreenMessage from '@/components/shared/FullScreenMessage'
 import { cb } from '@/lib/cx'
@@ -75,6 +76,7 @@ function App() {
       <Calendar date={date} />
       <Map location={location} />
       <Contact groom={groom} bride={bride} />
+      <Share groomName={groom.name} brideName={bride.name} date={date} />
     </div>
   )
 }
