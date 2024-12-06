@@ -1,4 +1,5 @@
 import Calendar from '@/components/sections/Calendar'
+import Contact from '@/components/sections/Contact'
 import Heading from '@/components/sections/Heading'
 import ImageGallery from '@/components/sections/ImageGallery'
 import Intro from '@/components/sections/Intro'
@@ -73,6 +74,7 @@ function App() {
       <ImageGallery images={galleryImages} />
       <Calendar date={date} />
       <Map location={location} />
+      <Contact groom={groom} bride={bride} />
     </div>
   )
 }
