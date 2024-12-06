@@ -1,4 +1,5 @@
 import Heading from '@/components/sections/Heading'
+import ImageGallery from '@/components/sections/ImageGallery'
 import Video from '@/components/sections/Video'
 import FullScreenMessage from '@/components/shared/FullScreenMessage'
 import { cb } from '@/lib/cx'
@@ -45,11 +46,12 @@ function App() {
   if (wedding === null) {
     return null
   }
-  const { date } = wedding
+  const { date, galleryImages } = wedding
   return (
     <div className={cx('container')}>
       <Heading date={date} />
       <Video />
+      <ImageGallery images={galleryImages} />
     </div>
   )
 }
