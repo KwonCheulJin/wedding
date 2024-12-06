@@ -1,5 +1,8 @@
+import Heading from '@/components/sections/Heading'
+import Video from '@/components/sections/Video'
 import FullScreenMessage from '@/components/shared/FullScreenMessage'
 import { cb } from '@/lib/cx'
+import { Wedding } from '@/models/wedding'
 import { useEffect, useState } from 'react'
 
 import styles from './App.module.scss'
@@ -7,7 +10,7 @@ import styles from './App.module.scss'
 const cx = cb(styles)
 
 function App() {
-  const [wedding, setWedding] = useState(null)
+  const [wedding, setWedding] = useState<Wedding | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   useEffect(() => {
@@ -38,9 +41,15 @@ function App() {
   if (error) {
     return <FullScreenMessage type="error" />
   }
+
+  if (wedding === null) {
+    return null
+  }
+  const { date } = wedding
   return (
     <div className={cx('container')}>
-      <p>{JSON.stringify(wedding)}</p>
+      <Heading date={date} />
+      <Video />
     </div>
   )
 }
