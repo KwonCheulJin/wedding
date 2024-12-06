@@ -6,7 +6,7 @@ const cx = cb(styles)
 
 interface SectionProps {
   className?: string
-  title?: string
+  title?: React.ReactNode
 }
 
 export default function Section({
