@@ -1,3 +1,4 @@
+import AttendCountModal from '@/components/attend-count-modal'
 import Calendar from '@/components/sections/Calendar'
 import Contact from '@/components/sections/Contact'
 import Heading from '@/components/sections/Heading'
@@ -77,6 +78,8 @@ function App() {
       <Map location={location} />
       <Contact groom={groom} bride={bride} />
       <Share groomName={groom.name} brideName={bride.name} date={date} />
+
+      <AttendCountModal wedding={wedding} />
     </div>
   )
 }

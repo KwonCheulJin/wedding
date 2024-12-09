@@ -1,3 +1,4 @@
+import Dimmed from '@/components/shared/Dimmed'
 import { cb } from '@/lib/cx'
 import 'swiper/css'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -22,7 +23,7 @@ export default function ImageViewer({
     return null
   }
   return (
-    <div className={cx('dimmed')}>
+    <Dimmed>
       <CloseButton onClose={onClose} className={cx('icon-close')} />
       <Swiper
         spaceBetween={20}
@@ -39,7 +40,7 @@ export default function ImageViewer({
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </Dimmed>
   )
 }
 
